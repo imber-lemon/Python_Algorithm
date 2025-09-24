@@ -6,5 +6,6 @@ def is_valid(s):
             s_new.append(lst.index(s[i]))
     for i in range(1, len(s_new)):
         if s_new[i-1] > s_new[i]:
+            return False
     return True
 print(is_valid("[()]"))
