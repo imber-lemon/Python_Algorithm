@@ -4,17 +4,21 @@ def is_valid(s):
     for i in range(0, len(s)):
         if s[i] in lst:
             s_new.append(lst.index(s[i]))
-    print(s_new)
-    j = 0
-    for k in range(len(s_new) - 1, len(s_new)//2, - 1):
-        if s_new[j] != s_new[k] - 1:
-            return False
-        else:
-            j += 1
-    for i in range(1, len(s_new), 2):
-        if s_new[i-1] > s_new[i]:
-            return False
-        elif s_new[i-1] + 1 != s_new[i]:
-            return False
-    return True
-print(is_valid("{[]}"))
+    if len(s_new) % 2 == 0:
+        for x in range(0, len(s_new)):
+            for i in range(x, len(s_new), 2):
+                if (s_new[x] + 1 == s_new[i] or s_new[x]-1 == s_new[i]) and s_new[i] % 2 == 1:
+#                 j = 0
+#                 for k in range(len(s_new) - 1, len(s_new) // 2 - 1, - 1):
+#                     if s_new[j] + 1 != s_new[k]:
+#                         return False
+#                     j += 1
+#         return True
+#     else:
+#         return False
+# print(is_valid("(([]){})"))
+                    print(s_new)
+                    s_new.remove(s_new[i-1])
+                    s_new.remove(s_new[i])
+                    print(s_new)
+print(is_valid("(([]){})"))
