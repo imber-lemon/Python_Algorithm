@@ -25,12 +25,15 @@
 
 
 def is_valid(s):
-    lst = ["(", ")", "[", "]", "{", "}"]
+    open_br = ["(", "[", "{"]
+    close_br = [")", "]", "}"]
     lst_new = []
     s_new = []
     for i in range(0, len(s)):
-        if s[i] in lst:
-            s_new.append(lst.index(s[i]))
+        if s[i] in open_br:
+            s_new.append(open_br.index(s[i]))
+        elif s[i] in close_br:
+            s_new.append(close_br.index(s[i]))
     print(s_new)
     for x in range(0, len(s_new)):
         for i in range(x+1, len(s_new)):
@@ -46,4 +49,4 @@ def is_valid(s):
         return True
     else:
         return False
-print(is_valid("[()]"))
+print(is_valid("[(])"))
