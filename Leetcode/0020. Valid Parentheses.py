@@ -35,18 +35,14 @@ def is_valid(s):
         elif s[i] in close_br:
             s_new.append(close_br.index(s[i]))
     print(s_new)
-    for x in range(0, len(s_new)):
-        for i in range(x+1, len(s_new)):
-            if s_new[x] + 1 == s_new[i]:
-                print(x)
-                print(i)
-                lst_new.append(x)
-                lst_new.append(i)
-    for i in range(0, len(lst_new)):
-        s_new.pop(lst_new[i])
-    print(s_new)
+    for i in range(0, len(s_new)):
+        for x in range(len(s_new)-1, -1, -1):
+            print(i, x)
+            if s_new[x] == s_new[i] and i != x:
+                s_new.pop(x)
+                s_new.pop(i)
     if len(s_new) == 0:
-        return True
+        print(True)
     else:
-        return False
-print(is_valid("[(])"))
+        print(False)
+print(is_valid("([]{})"))
