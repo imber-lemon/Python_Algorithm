@@ -27,24 +27,21 @@
 def is_valid(s):
     open_br = ["(", "[", "{"]
     close_br = [")", "]", "}"]
-    s_new = []
     lst = []
-    for j in range(0, len(s)):
-        s_new.append(s[j])
-    for i in range(0, len(s_new)):
-        if s[i] in open_br:
-            lst.append(s[i])
-        elif s[i] in close_br:
-             if open_br.index(lst[len(lst)-1]) == close_br.index(s[i]):
-                 lst.remove(len(lst)-1)
-    #         for x in range(i-1, -1, -1):
-    #             if (s_new[x] in open_br) and (close_br.index(s_new[i]) == open_br.index(s_new[x])):
-    #                 s_new.remove(s_new[x])
-    #                 s_new.remove(s_new[i])
-    # if len(s_new) == 0:
-    #     return True
-    # else:
-    #     return False
-    print(lst)
-print(is_valid("[[[]"))
-
+    if len(s) % 2 == 0:
+        for i in range(0, len(s)):
+            if s[i] in open_br:
+                lst.append(s[i])
+                print(lst)
+            elif s[i] in close_br and len(lst) >= 1:
+                 if open_br.index(lst[len(lst)-1]) == close_br.index(s[i]):
+                     lst.remove(lst[len(lst)-1])
+        print(s)
+        print(lst)
+        if len(lst) == 0:
+            return True
+        else:
+            return False
+    else:
+        return False
+print(is_valid("[([]])"))
