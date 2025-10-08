@@ -36,8 +36,6 @@ def is_valid(s):
             elif s[i] in close_br and len(lst) >= 1:
                  if open_br.index(lst[len(lst)-1]) == close_br.index(s[i]):
                      lst.remove(lst[len(lst)-1])
-        print(s)
-        print(lst)
         if len(lst) == 0:
             return True
         else:
