@@ -32,14 +32,17 @@ def is_valid(s):
         for i in range(0, len(s)):
             if s[i] in open_br:
                 lst.append(s[i])
-                print(lst)
-            elif s[i] in close_br and len(lst) >= 1:
-                 if open_br.index(lst[len(lst)-1]) == close_br.index(s[i]):
-                     lst.remove(lst[len(lst)-1])
+            elif s[i] in close_br:
+                if len(lst) > 0 and open_br.index(lst[-1]) == close_br.index(s[i]):
+                     lst.pop()
+                else:
+                     return False
         if len(lst) == 0:
             return True
         else:
             return False
     else:
         return False
-print(is_valid("[([]])"))
+
+
+print(is_valid("){"))
