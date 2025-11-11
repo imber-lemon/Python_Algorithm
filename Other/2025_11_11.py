@@ -8,8 +8,6 @@ def F(n):
 
 
 print(F(7555451))
-
-
 # f = [0] * 7555451
 # for n in range(0, 7555451):
 #     if n == 1:
