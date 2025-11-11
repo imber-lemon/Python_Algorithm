@@ -21,13 +21,3 @@ for n in range(0, 7555451):
 
 print(f[7555450])
 
-
-# lst = [6, 3, 4, 5, 7]
-# num = 4
-# for i in range(0, lst.index(num) - 1):
-#     if lst[i] > lst[i+1]:
-#         lst[i], lst[i+1] = lst[i+1], lst[i]
-# for i in range(lst.index(num), len(lst) - 1):
-#     if lst[i] > lst[i+1]:
-#         lst[i], lst[i+1] = lst[i+1], lst[i]
-# print(lst)
