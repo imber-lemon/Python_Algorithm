@@ -15,3 +15,4 @@ def isomorphic_str(s, t):
         print(ind_s)
         print(ind_t)
 print(isomorphic_str('add', 'egg'))
+
