@@ -9,10 +9,25 @@ def isomorphic_str(s, t):
         for i in range(0, len(s)):
             ind_t[alp.index(t[i])] += 1
             ind_s[alp.index(s[i])] += 1
-        for j in range(0, len(ind_t)):
+        j = 0
+        while j != len(ind_t):
             if ind_t[j] == 0:
                 ind_t.pop(j)
-        print(ind_s)
-        print(ind_t)
-print(isomorphic_str('add', 'egg'))
-
+                j -= 1
+            j += 1
+        x = 0
+        while x != len(ind_s):
+            if ind_s[x] == 0:
+                ind_s.pop(x)
+                x -= 1
+            x += 1
+        if ind_s == ind_t:
+            return True
+        else:
+            ind_s.sort()
+            ind_t.sort()
+            if ind_t == ind_s:
+                return True
+            else:
+                return False
+print(isomorphic_str('bbbaaaba', 'aaabbbba'))
