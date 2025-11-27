@@ -3,7 +3,7 @@ def nth_digit(n):
     for i in range(1, n + 1):
         string += str(i)
     return int(string[n-1])
-print(nth_digit(200))
+# print(nth_digit(200))
 
 # def nth_digit(n):
 #     string = ""
@@ -22,9 +22,11 @@ def nth_digit2(n):
     for i in range(0, n):
         sum += len(str(i))
         if sum == n:
-            return str(n)[0]
+            ans = str(n)[0]
+            return int(ans)
         elif sum > n:
             i = str(i)
-            print(sum, i)
-            return i[sum-n-1]
-print(nth_digit2(11))
+            ans = i[1]
+            ans = int(ans)
+            return int(i[1])
+print(nth_digit2(17))
