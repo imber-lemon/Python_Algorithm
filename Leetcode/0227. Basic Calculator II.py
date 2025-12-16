@@ -1,4 +1,4 @@
-eq = '3+5*10'
+eq = '4*3+10'
 s_ind = []
 s = []
 n = []
@@ -16,20 +16,28 @@ res = 0
 for i in range(0, len(s)):
     if s[i] == '*':
         n[i] = int(n[i]) * int(n[i+1])
-        n.pop(i+1)
+        n.pop(i + 1)
         s.pop(i)
     elif s[i] == '/':
         n[i] = int(n[i]) // int(n[i+1])
-        n.pop(i+1)
+        n.pop(i + 1)
         s.pop(i)
-    if '*' and '/' not in s:
-        print(n)
-        print(s)
-        for i in range(0, len(s)):
-            if s[i] == '+':
-                res += int(n[i]) + int(n[i+1])
-                print(int(n[i]), int(n[i+1]),int(n[i]) + int(n[i+1]))
-            elif s[i] == '-':
-                res += int(n[i]) - int(n[i+1])
-
+if '*' and '/' not in s:
+    print(n)
+    print(s)
+    for i in range(0, len(s)):
+        if s[i] == '+' and len(n) > 2:
+            res += int(n[i]) + int(n[i+1])
+            n.pop(i)
+            n.pop(i + 1)
+            print(res)
+        elif s[i] == '-' and len(n) > 2:
+            res += int(n[i]) - int(n[i+1])
+            n.pop(i)
+            n.pop(i + 1)
+            print(res)
+        if s[i] == '+' and len(n) <= 2:
+            res += int(n[0]) + int(n[1])
+        elif s[i] == '-' and len(n) <= 2:
+            res += int(n[0]) - int(n[1])
 print(res)
