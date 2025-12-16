@@ -22,11 +22,14 @@ while '*' in s and '/' in s:
         n[i] = int(n[i]) * int(n[i+1])
         n.pop(i + 1)
         s.pop(i)
-        print(n)
+        print(n, s)
+        input()
     elif s[i] == '/':
         n[i] = int(n[i]) // int(n[i+1])
         n.pop(i + 1)
         s.pop(i)
+        print(n, s)
+        input()
     i += 1
 print(n)
 print(s)
@@ -39,7 +42,6 @@ for i in range(0, len(s)):
         n[i] += int(n[i]) - int(n[i+1])
         n.pop(i + 1)
         print(n, s)
-
     if s[i] == '+' and len(n) <= 2:
         res += int(n[0]) + int(n[1])
     elif s[i] == '-' and len(n) <= 2:
