@@ -1,6 +1,3 @@
-from unittest import skipIf
-
-
 def basic_calc(eq):
     s_ind = []
     s = []
@@ -55,7 +52,42 @@ def basic_calc(eq):
             n[i] += int(n[i]) - int(n[i+1])
             n.pop(i + 1)
             s.pop(i)
-            # print(n, s)
+            # print(n, s)        
         i += 1
     return n[0]
 print(basic_calc('3/2*2'))
+
+
+
+
+eq = '3+4/2'
+symb = '+-*/'
+last_n = 0
+res = 0
+for i in range(0, len(eq)):
+    if eq[i] not in symb:
+        last_n = int(eq[i])
+        print(last_n)
+        eq.replace(eq[i], "")
+    else:
+        if eq[i] == '+':
+            num = (last_n + int(eq[i+1]))
+            res += num
+            last_n = num
+            print(last_n, eq[i], eq[i + 1])
+        elif eq[i] == '-':
+            num = (last_n - int(eq[i+1]))
+            res += num
+            last_n = num
+            print(last_n, eq[i], eq[i + 1])
+        elif eq[i] == '*':
+            num = (last_n * int(eq[i+1]))
+            res += num
+            last_n = num
+            print(last_n, eq[i], eq[i + 1])
+        elif eq[i] == '/':
+            num = (last_n // int(eq[i+1]))
+            res += num
+            last_n = num
+            print(last_n, eq[i], eq[i + 1])
+print(res)
