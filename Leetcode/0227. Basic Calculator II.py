@@ -57,32 +57,52 @@
 #     return n[0]
 # print(basic_calc('6+2*4'))
 symb = '+-/*'
-eq = '6*2+4'
+eq = '6+2+4'
 last_n = 0
 res = 0
 s = 0
 n = 0
-for i in eq:
-    if i in symb:
-        s = i
-    else:
-        n = int(i)
-        if last_n != 0:
-            print(last_n, n, s)
-            if s == '*':
-                res += last_n * n
-                last_n = last_n * n
-            elif s == '/':
-                res += last_n // n
-                last_n = last_n // n
-            elif s == '+':
-                res += last_n + n
-                last_n = last_n + n
-            else:
-                res += last_n - n
-                last_n = last_n - n
-        else:
-            last_n = n
-        print('res', n, eq[-1], res)
-        if n == int(eq[-1]):
+eq = list(eq)
+for i in range(len(eq)):
+    if eq[i] in symb:
+        if eq[i] == '+':
+            n = int(eq[i-1]) + int(eq[i+1])
+            res += n
+            eq[i+1] = n
             print(res)
+        elif eq[i] == '-':
+            n = int(eq[i - 1]) - int(eq[i + 1])
+            res += n
+            eq[i+1] = n
+            print(res)
+        elif eq[i] == '*':
+            n = int(eq[i - 1]) * int(eq[i + 1])
+            res += n
+            eq[i+1] = n
+            print(res)
+        else:
+            n = int(eq[i - 1]) // int(eq[i + 1])
+            res += n
+            eq[i+1] = n
+            print(res)
+    # else:
+    #     if '/' in eq and '*' in eq:
+    #         if s == '*':
+    #             res += last_n * n
+    #             last_n = last_n * n
+    #             print(last_n, s, n, res)
+    #         elif s == '/':
+    #             res += last_n // n
+    #             last_n = last_n // n
+    #             print(last_n, s, n, res)
+    #     else:
+    #         if s == '+':
+    #             res += last_n + n
+    #             last_n = last_n + n
+    #             print(last_n, s, n, res)
+    #         else:
+    #             res += last_n - n
+    #             last_n = last_n - n
+    #             print(last_n, s, n, res)
+    #     n = int(i)
+print('  ', res)
