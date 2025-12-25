@@ -39,4 +39,4 @@ def bas_calc(eq):
             i += 1
 
     return nums[0]
-print(bas_calc('3+2*2'))
+print(bas_calc('6+4/2'))
