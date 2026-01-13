@@ -1,0 +1,33 @@
+# def is_subseq(s, t):
+#     ind = []
+#     if s in t:
+#         return True
+#     t = list(t)
+#     print(t)
+#     for i in s:
+#         if i in t:
+#             ind.append(t.index(i))
+#             t.pop(t.index(i))
+#         else:
+#             return False
+#     x_last = 0
+#     for x in ind:
+#         if x < x_last:
+#             return False
+#         x_last = x
+#     return True
+# print(is_subseq("aaaaaa", "bbaaaa"))
+def is_subseq(s, t):
+    if s:
+        t = list(t)
+        s = list(s)
+        s_ind = 0
+        for i in t:
+            if i == s[s_ind]:
+                s_ind += 1
+                if s_ind == len(s):
+                    return True
+        return False
+    else:
+        return True
+print(is_subseq("abc", "ahbgdc"))
