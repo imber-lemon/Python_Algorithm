@@ -1,0 +1,12 @@
+def subseq(words, groups):
+    d = dict()
+    for i in range(0, len(words)):
+        d[words[i]] = groups[i]
+    res = []
+    c = None
+    for i in d:
+        if d[i] != c:
+            res.append(i)
+            c = d[i]
+    return res
+print(subseq(["wx", "h"], [0, 1]))
