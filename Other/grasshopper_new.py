@@ -9,5 +9,4 @@ while i != len(lst):
     num = min(lst[i+1], lst[i+2])
     sum += num
     i = lst.index(num)
-    print(i)
 print(sum)

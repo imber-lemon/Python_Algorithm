@@ -1,12 +1,12 @@
-def subq(words, groups):
-    ind = dict()
+def subseq(words, groups):
+    d = dict()
     for i in range(0, len(words)):
-        ind[words[i]] = groups[i]
-    res = [str(words[0])]
-    c = ind[words[0]]
-    for i in ind:
-        if ind[i] != c:
+        d[words[i]] = groups[i]
+    res = []
+    c = None
+    for i in d:
+        if d[i] != c:
             res.append(i)
-            c = ind[i]
+            c = d[i]
     return res
-print(subq(["e","a","b"],[0,0,1]))
+print(subseq(["wx", "h"], [0, 1]))
