@@ -16,4 +16,5 @@ class Point:
         self.y = y
 
 p1 = Point(2, 2)
-print(p1.reset())
+p1.move(3, 1)
+p1.calculate_distance(4, 1)
