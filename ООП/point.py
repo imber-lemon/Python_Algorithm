@@ -5,7 +5,7 @@ class Point:
 
     def calculate_distance(self, x, y):
         dist = ((x - self.x) ** 2 + (y - self.y) ** 2) ** 0.5
-        return dist
+        return int(dist)
 
     def reset(self, x = 0, y = 0):
         self.x = x
@@ -17,4 +17,4 @@ class Point:
 
 p1 = Point(2, 2)
 p1.move(3, 1)
-p1.calculate_distance(4, 1)
+print(p1.calculate_distance(4, 2))
