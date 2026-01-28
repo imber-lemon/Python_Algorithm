@@ -10,7 +10,7 @@ class Linkedlist:
         current_node = self.head
         s = ''
         while current_node:
-            s += current_node + ', '
+            s += str(current_node) + ', '
             current_node = current_node.next
         return s
     def begin_insert(self, data):
@@ -36,7 +36,7 @@ class Linkedlist:
         for i in range(index):
             current_node = current_node.next
             i += 1
-        current_node.next, current_node = data
+        current_node = data
     def delete_head(self):
         self.head = self.head.next
     def delete_tail(self):
