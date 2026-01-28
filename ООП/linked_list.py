@@ -20,22 +20,30 @@ class Linkedlist:
         else:
             new_node.next = self.head
             self.head = new_node
-    def end_insert(self, data):
-        new_node = Node(data)
-        if not self.head:
-            self.head = new_node
-    def update_data(self, pos, data):
+    # def end_insert(self, data):
+    #     new_node = Node(data)
+    def update_data(self, index, data):
         new_node = Node(data)
         current_node = self.head
         i = 0
-        while i <= pos:
+        while i <= index:
             current_node = current_node.next
             i += 1
         current_node = new_node
+    def insert_at_index(self, index, data):
+        current_node = self.head
+        i = 0
+        for i in range(index):
+            current_node = current_node.next
+            i += 1
+        current_node.next, current_node = data
+    def delete_head(self):
+        self.head = self.head.next
+    def delete_tail(self):
+        current_node = self.head
+        while current_node.next.next:
+            current_node =  current_node.next
 llist = Linkedlist()
 llist.begin_insert(1)
-llist.begin_insert(1)
-llist.begin_insert(1)
-llist.update_data(3, 2)
+llist.insert_at_index(1, 2)
 print(llist)
-
