@@ -13,9 +13,14 @@ class Linkedlist:
             s += str(current_node.value) + ', '
             current_node = current_node.next
         return s
-    def inserter(self, lst):
-        for i in lst:
-            new_node = Node(i)
+    def list_to_linked(self, lst):
+        for i in range(len(lst) - 1, -1, -1):
+            new_node = Node(lst[i])
+            if self.head is None:
+                self.head = new_node
+            else:
+                new_node.next = self.head
+                self.head = new_node
     def begin_insert(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -55,8 +60,17 @@ class Linkedlist:
             current_node = current_node.next
             i += 1
         return i
+    def linked_to_list(self):
+        lst = []
+        current_node = self.head
+        while current_node:
+            lst.append(current_node.value)
+            current_node = current_node.next
+        return lst
 llist = Linkedlist()
-llist.inserter([1, 2, 3, 4])
+llist.list_to_linked([1, 2, 3, 4, 5])
 print(llist)
+lst = llist.linked_to_list()
+print(lst)
 # llist.delete_tail()
 # print(llist)
