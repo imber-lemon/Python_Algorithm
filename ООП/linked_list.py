@@ -10,7 +10,7 @@ class Linkedlist:
         current_node = self.head
         s = ''
         while current_node:
-            s += str(current_node.value) + ', '
+            s += str(current_node.value) + '  '
             current_node = current_node.next
         return s
     def list_to_linked(self, lst):
@@ -31,26 +31,27 @@ class Linkedlist:
     def end_insert(self, data):
         new_node = Node(data)
         current_node = self.head
-        while current_node:
+        while current_node.next:
             current_node = current_node.next
-        current_node.next = new_node.value
+        current_node.next = new_node
         new_node.next = None
     def update_data(self, index, data):
-        new_node = Node(data)
         current_node = self.head
         i = 0
         while i < index:
             current_node = current_node.next
             i += 1
-        current_node.value = new_node.value
+        current_node.value = data
     def insert_at_index(self, index, data):
+        new_node = Node(data)
         current_node = self.head
-        i = 0
-        for i in range(index):
+        i = 1
+        for i in range(index - 1):
             current_node = current_node.next
             i += 1
-        current_node = current_node.next
-        current_node.value = data
+        next_node = current_node.next
+        current_node.next = new_node
+        new_node.next = next_node
     def delete_head(self):
         self.head = self.head.next
     def delete_tail(self):
@@ -72,9 +73,22 @@ class Linkedlist:
             lst.append(current_node.value)
             current_node = current_node.next
         return lst
+    def delete_linked(self):
+        self.head = None
+    def reverse(self):
+        lst = llist.linked_to_list()
+        llist.delete_linked()
+        llist.list_to_linked(lst[::-1])
+    def avg(self):
+        current_node = self.head
+        sum = 0
+        c = 0
+        while current_node:
+            sum += current_node.value
+            c += 1
+            current_node = current_node.next
+        return sum // c
 llist = Linkedlist()
 llist.list_to_linked([1, 2, 3, 4, 5])
-llist.end_insert(6)
+print(llist.avg())
 print(llist)
-# llist.delete_tail()
-# print(llist)
