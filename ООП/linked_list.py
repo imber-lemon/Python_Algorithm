@@ -28,8 +28,13 @@ class Linkedlist:
         else:
             new_node.next = self.head
             self.head = new_node
-    # def end_insert(self, data):
-    #     new_node = Node(data)
+    def end_insert(self, data):
+        new_node = Node(data)
+        current_node = self.head
+        while current_node:
+            current_node = current_node.next
+        current_node.next = new_node.value
+        new_node.next = None
     def update_data(self, index, data):
         new_node = Node(data)
         current_node = self.head
@@ -69,8 +74,7 @@ class Linkedlist:
         return lst
 llist = Linkedlist()
 llist.list_to_linked([1, 2, 3, 4, 5])
+llist.end_insert(6)
 print(llist)
-lst = llist.linked_to_list()
-print(lst)
 # llist.delete_tail()
 # print(llist)
