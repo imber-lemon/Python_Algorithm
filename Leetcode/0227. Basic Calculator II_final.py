@@ -45,4 +45,3 @@ def bas_calc(eq):
     return nums[0]
 
 print(bas_calc('3+2*2'))
-

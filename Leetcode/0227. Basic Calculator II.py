@@ -17,4 +17,4 @@ def basic_cal(s):
                     num = num * num2
                 else:
                     num = num / num2
-            elif
+
