@@ -2,8 +2,12 @@ def bas_calc(eq):
     num = 0
     nums = []
     sym = []
-
+    eq2 = ''
     for i in eq:
+        if i != ' ':
+            eq2 += i
+
+    for i in eq2:
         if i.isdigit():
             num = num * 10 + int(i)
         else:
@@ -39,4 +43,6 @@ def bas_calc(eq):
             i += 1
 
     return nums[0]
-print(bas_calc('3*2*4+8'))
+
+print(bas_calc('3+2*2'))
+

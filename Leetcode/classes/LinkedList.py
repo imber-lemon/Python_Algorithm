@@ -101,3 +101,6 @@ class Linkedlist:
             c += 1
             current_node = current_node.next
         return sum_val / c
+    def remove_node(self, data):
+
+    def middle_node(self):
