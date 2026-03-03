@@ -1,20 +1,25 @@
-def basic_cal(s):
-    eq = ""
-    for i in s:
-        if i != " ":
-            eq += i
+def calculate(s):
+    stack = []
     num = 0
-    for i in eq:
-        if i.isdigit():
-            num = num * 10 + i
+    last_op = '+'
+    s = s.replace(' ', '') + '+'
+    for char in s:
+        if char.isdigit():
+            num = num * 10 + int(char)
         else:
-            if i == "*" or i == "/":
-                sym = i
-                num2 = 0
-                while i.isdigit():
-                    num2 = num2 * 10 + i
-                if sym == "*":
-                    num = num * num2
+            if last_op == '+':
+                stack.append(num)
+            elif last_op == '-':
+                stack.append(-num)
+            elif last_op == '*':
+                stack.append(stack.pop() * num)
+            elif last_op == '/':
+                top = stack.pop()
+                if top < 0:
+                    stack.append(-(-top // num))
                 else:
-                    num = num / num2
-
+                    stack.append(top // num)
+            last_op = char
+            num = 0
+    return sum(stack)
+print(calculate("14-3/2"))
