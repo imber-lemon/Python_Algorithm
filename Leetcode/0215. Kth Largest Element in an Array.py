@@ -1,13 +1,16 @@
 def find_kth_element(nums, k):
-    min_lst = min(nums)
-    lst = [0] * max(nums)
+    lst = [0] * abs(max(nums))
     for i in nums:
-        lst[i-1] += 1
-    for i in range(len(lst) - 1, -1, -1):
-        if k > lst[i]:
-            k -= lst[i]
-        else:
-            return i
-        if k == 0:
-            return i
-print(find_kth_element([3,2,3,1,2,4,5,5,6], 4))
+        lst[abs(i)-1] += 1
+    x = len(lst) - 1
+    while k > 0:
+        if lst[x] >= 1:
+            if lst[x] > k:
+                return x + 1
+            else:
+                k -= lst[x]
+                if k == 0:
+                    return x + 1
+        x -= 1
+    return x
+print(find_kth_element([-1, -1], 2))
