@@ -8,4 +8,4 @@ def sortColors(nums):
         colors[i] += 1
     nums = [0] * colors[0] + [1] * colors[1] + [2] * colors[2]
     print(nums)
-print(sortColors([2,0,2,1,1,0]))
+sortColors([2, 0, 2, 1, 1, 0])
