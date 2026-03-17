@@ -7,3 +7,4 @@ def hIndex(citations):
             h = i + 1
     return h
 print(hIndex([3, 0, 6, 1, 5]))
+
