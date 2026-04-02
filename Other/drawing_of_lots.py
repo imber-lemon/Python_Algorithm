@@ -1,6 +1,6 @@
 def matches(players):
     """
-    This is program that conducts a draw with commands and returns dict with rounds and matches in this round
+    This program conducts a draw with commands and returns dict with rounds and matches in this round
     :param players: str
     :return: dict
     """
