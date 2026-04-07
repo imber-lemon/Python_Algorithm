@@ -1,5 +1,3 @@
-from smtplib import SMTP_SSL
-
 from classes.print_matrix import print_matrix
 
 def spiral_matrix(matrix):
