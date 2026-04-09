@@ -4,7 +4,7 @@ def spiral_matrix(matrix):
     print_matrix(matrix)
     sp_m = []
     num = matrix[0][0]
-    for l in range(len(matrix) // 2):
+    for l in range(len(matrix) // 2 + 1):
         if num == matrix[0][0]:
             for i in range(0, len(matrix[0])):
                 sp_m.append(matrix[0][i])
@@ -22,6 +22,9 @@ def spiral_matrix(matrix):
             while matrix[x][0] not in sp_m:
                 sp_m.append(matrix[x][0])
                 x -= 1
-        return sp_m
+            num = matrix[x+1][1]
+            #print(num)
+        print_matrix(matrix[1:-1, 1:-1])
+    return sp_m
 
-print(spiral_matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+print(spiral_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]))
