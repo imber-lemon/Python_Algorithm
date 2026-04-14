@@ -9,5 +9,5 @@ def spiral_matrixII(n):
         else:
             matrix[j].append(i)
     return matrix
-print(spiral_matrixII(3))
+print(spiral_matrixII(4))
 # 00, 01, 02, 12, 22, 21, 20, 10, 11
