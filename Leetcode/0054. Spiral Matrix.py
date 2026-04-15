@@ -5,7 +5,7 @@ def spiral_matrix(matrix):
     print_matrix(matrix)
     sp_m = []
     num = matrix[0][0]
-    l = 0
+    l = 0 #счетчик отступа
     for l in range(len(matrix) // 2 + 1):
         if num == matrix[l][l]:
             for i in range(l, len(matrix[l]) - l):
@@ -31,4 +31,6 @@ def spiral_matrix(matrix):
 matrix3 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 matrix4 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
 matrix5 = [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]]
-print(spiral_matrix([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]))
+matrix6 = [[1, 2, 3, 4, 5, 6], [7, 8, 9, 10, 11, 12], [13, 14, 15, 16, 17, 18], [19, 20, 21, 22, 23, 24], [25, 26, 27, 28, 29, 30], [31, 32, 33, 34, 35, 36]]
+print(spiral_matrix(matrix3))
+
