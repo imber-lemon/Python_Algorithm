@@ -40,6 +40,7 @@ def spiral_matrix(matrix):
     return sp_m
 
 def spiral_matrix(matrix):
+    print_matrix(matrix)
     sp_m = []
     l = 0
     while l <= (min(len(matrix), len(matrix[0])) - 1) // 2:
