@@ -1,4 +1,4 @@
-lst = [int(i) for i in open('17.txt', encoding='utf-8-sig')]
+lst = [int(i) for i in open('../Other/17.txt', encoding='utf-8-sig')]
 not_max = []
 maxi = 0
 while maxi % 100 != 28:
