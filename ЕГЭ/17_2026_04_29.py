@@ -17,5 +17,6 @@ for i in range(0, len(lst) - 2):
                 c += 1
                 break
 
+
 print("всего троек:", c)
 print("макс сумма:", max_sum)
