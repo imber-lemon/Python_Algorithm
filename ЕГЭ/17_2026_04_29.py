@@ -5,6 +5,7 @@ while maxi % 100 != 28:
     maxi = max(list(set(lst) - set(not_max)))
     if maxi % 100 != 28:
         not_max.append(maxi)
+
 c = 0
 max_sum = 0
 sum_nums = 0
@@ -16,7 +17,6 @@ for i in range(0, len(lst) - 2):
                     max_sum = sum(lst[i:i+3])
                 c += 1
                 break
-
 
 print("всего троек:", c)
 print("макс сумма:", max_sum)
