@@ -58,14 +58,14 @@ async def handle_message(message: types.Message):
     model = user_model[user_id]
     text = message.text
 
-    # response = chat(
-    #     model=model,
-    #     messages=[{'role': 'user', 'content': text}],
-    # )
-    #
-    # await message.answer(response.message.content)
+    response = chat(
+        model=model,
+        messages=[{'role': 'user', 'content': text}],
+    )
 
-    await message.answer("Боже, благослови великого Беньямина Нетаньяху, дай бог ему здоровья и шаббат шалом всем гоям в этом чате")
+    await message.answer(response.message.content)
+
+    await message.answer(response)
 async def main():
     await dp.start_polling(bot)
 
