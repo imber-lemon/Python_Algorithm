@@ -10,3 +10,9 @@ def letter_comb(digits):
         "9": ["w", "x", "y", "z"]
     }
     res = []
+    matrix = []
+    for i in digits:
+        matrix.append(nums[i])
+    return matrix
+
+print(letter_comb("25"))
