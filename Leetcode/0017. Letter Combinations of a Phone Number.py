@@ -13,6 +13,23 @@ def letter_comb(digits):
     matrix = []
     for i in digits:
         matrix.append(nums[i])
-    return matrix
 
-print(letter_comb("25"))
+    if len(matrix) == 1:
+        return matrix[0]
+    elif len(matrix) == 2:
+        for i in matrix[0]:
+            for x in matrix[1]:
+                res.append(i+x)
+    elif len(matrix) == 3:
+        for i in matrix[0]:
+            for j in matrix[1]:
+                for x in matrix[2]:
+                    res.append(i + j + x)
+    elif len(matrix) == 4:
+        for i in matrix[0]:
+            for j in matrix[1]:
+                for x in matrix[2]:
+                    for y in matrix[3]:
+                        res.append(i + j + x + y)
+    return res
+print(letter_comb("23"))

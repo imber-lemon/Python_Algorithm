@@ -4,27 +4,26 @@ from aiogram.filters import Command
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 # from ollama import chat
 
-TOKEN = "8755267058:AAEMaWBqRpQ9ITZrrCJ_SfG8bDG9XDRFgC8"
+TOKEN = "8755267058:AAEMaWBqRpQ9ITZrrCJ_SfG8bDG9XDRFgC8" #неправильный
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
-# хранение выбранной модели
 user_model = {}
 
-# модели
 models = {
     "🧠 Qwen 3.5": "qwen3.5",
     "🔍 DeepSeek": "deepseek",
-    "⚡ Mistral": "mistral"
+    "⚡ Mistral": "mistral",
+    "🌐 Gemma": "gemma3:4b"
 }
 
-# --- команда старт ---
+#старт
 @dp.message(Command("start"))
 async def start(message: types.Message):
     await message.answer("Привет! Напиши /models чтобы выбрать модель")
 
-# --- команда выбора модели ---
+#команда выбора модели
 @dp.message(Command("models"))
 async def models_menu(message: types.Message):
     keyboard = InlineKeyboardMarkup(
@@ -35,7 +34,7 @@ async def models_menu(message: types.Message):
     )
     await message.answer("Выбери модель:", reply_markup=keyboard)
 
-# --- выбор модели ---
+#выбор модели
 @dp.callback_query()
 async def choose_model(callback: types.CallbackQuery):
     user_id = callback.from_user.id
@@ -46,7 +45,7 @@ async def choose_model(callback: types.CallbackQuery):
     await callback.message.answer(f"Модель выбрана: {model}")
     await callback.answer()
 
-# --- обработка сообщений ---
+#обработка сообщений
 @dp.message()
 async def handle_message(message: types.Message):
     user_id = message.from_user.id
@@ -65,7 +64,6 @@ async def handle_message(message: types.Message):
 
     await message.answer(response.message.content)
 
-    await message.answer(response)
 async def main():
     await dp.start_polling(bot)
 
