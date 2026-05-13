@@ -10,7 +10,6 @@ bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 user_model = {}
-
 models = {
     "🧠 Qwen 3.5": "qwen3.5",
     "🔍 DeepSeek": "deepseek",
