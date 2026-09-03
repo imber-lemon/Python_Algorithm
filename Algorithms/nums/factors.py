@@ -12,13 +12,16 @@ def factors(num):
         elif num == 1:
             f.append(1)
             return f
+
 def factors2(num):
     i = 2
     factors_lst = []
     while num > 1:
-        if num % i == 0:
-            while num % i == 0:
-                num = num // i
-                factors_lst.append(i)
-        else:
-            num += 1
+        while num % i == 0:
+            num = num // i
+            factors_lst.append(i)
+        i += 1
+    return factors_lst
+
+#print("fac1:", factors(10))
+print("fac2:", factors2(45336767854))
