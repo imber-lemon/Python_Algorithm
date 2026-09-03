@@ -11,12 +11,20 @@
 #             lst.clear()
 #             w1 = height[i]
 #     return "итог:", summary
-# print(rain([4,2,0,3,2,5]))
+# print(rain([0,1,0,2,1,0,1,3,2,1,2,1]))
 
 def rain(height):
     lst = []
     w1 = height[0]
     summ = 0
-    i = 0
+    i = 1
     while i < len(lst) - 1:
-        while height[i] >
+        if w1 > height[i]:
+            lst.append(height[i])
+            print(lst)
+        else:
+            summ += len(lst) * max(lst) - sum(lst)
+            print(summ)
+            w1 = height[i]
+        i += 1
+print(rain([0,1,0,2,1,0,1,3,2,1,2,1]))
