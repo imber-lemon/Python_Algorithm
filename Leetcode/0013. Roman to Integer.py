@@ -28,4 +28,4 @@ def roman_to_int(s):
     else:
         return sum + s_new[len(s_new) - 1]
 
-print(roman_to_int("MCMXCIV"))
+print(roman_to_int("VI"))
