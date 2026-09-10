@@ -1,19 +1,9 @@
 def roman_to_int(s):
-    nums = {
-        "M" : 1000,
-        "D" : 500,
-        "C" : 100,
-        "L" : 50,
-        "X" : 10,
-        "V" : 5,
-        "I" : 1
-    }
+    M = ["", "M", "MM", "MMM", "MMMM", "MMMMM"]
+    C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+    X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+    I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
     res = 0
-    while i
-        if nums[s[i]] > nums[s[i + 1]]:
-            res += nums[s[i]]
-        else:
-            res += nums[s[i + 1]] - nums[s[i]]
-            i += 1
-    return res
+    for i in range():
+        pass
 print(roman_to_int("VI"))

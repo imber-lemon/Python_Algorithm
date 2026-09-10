@@ -25,5 +25,17 @@ def into_roman(n):
     C = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
     X = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
     I = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
-    return M[n // 1000] + C[n // 100] + X[n // 10] + I[n]
-print(into_roman(1499))
+    res = ""
+    if n >= 1000:
+        res += M[n // 1000]
+        n = n % 1000
+    if n >= 100:
+        res += C[n // 100]
+        n = n % 100
+    if n >= 10:
+        res += X[n // 10]
+        n = n % 10
+    if n >= 1:
+        res += I[n]
+    return res
+print(into_roman(1500))

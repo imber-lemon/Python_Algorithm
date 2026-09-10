@@ -1,12 +1,10 @@
 def sum_of_nums_uni(n):
-    c = 10
     res = 0
-    while n > c:
+    while n >= 1:
         res += n % 10
         n //= 10
-        c *= 10
-    return res + n // 10 + n % 10
-print(sum_of_nums_uni(1354))
+    return res
+
 
 def sum_of_nums_python(n):
     n = str(n)
@@ -14,4 +12,6 @@ def sum_of_nums_python(n):
     for i in n:
         res += int(i)
     return res
-print(sum_of_nums_python(1345))
+
+
+print(sum_of_nums_uni(2312412))
