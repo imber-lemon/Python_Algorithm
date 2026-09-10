@@ -7,3 +7,11 @@ def sum_of_nums_uni(n):
         c *= 10
     return res + n // 10 + n % 10
 print(sum_of_nums_uni(1354))
+
+def sum_of_nums_python(n):
+    n = str(n)
+    res = 0
+    for i in n:
+        res += int(i)
+    return res
+print(sum_of_nums_python(1345))
