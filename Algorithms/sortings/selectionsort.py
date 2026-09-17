@@ -6,6 +6,7 @@ def selectionsort(lst):
             if lst[x] > max:
                 max = lst[x]
         lst_new.append(max)
-        lst.pop(lst.index(max))
+        #lst.pop(lst.index(max))
+        lst.remove(max)
     return lst_new
 print(selectionsort([2, 1, 4, 3, 5, 10]))
