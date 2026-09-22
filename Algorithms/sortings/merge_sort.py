@@ -14,5 +14,5 @@ def merge(lst):
         lst_new[i] = lst[i:i+n]
     n *= 2
     return lst_new
-lst = [[5] ,[3], [7], [2], [9], [6]]
+lst = [5, 3, 6, 1, 20, 43]
 print(merge(lst))

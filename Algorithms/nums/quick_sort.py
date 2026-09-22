@@ -7,4 +7,4 @@ def quick_sort(lst):
         pivot = [q] * lst.count(q)
         higher = [elem for elem in lst if elem > q]
         return quick_sort(lower) + pivot + quick_sort(higher)
-print(quick_sort([5, 3, 7, 2, 4]))
+#print(quick_sort([5, 3, 7, 2, 4]))
