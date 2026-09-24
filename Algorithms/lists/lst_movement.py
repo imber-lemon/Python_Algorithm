@@ -8,4 +8,7 @@ def lst_move(lst, length, is_right):
             lst.append(lst[0])
             lst.pop(0)
     return lst
-print(lst_move([1, 2, 3, 4, 5], 2, False))
+lst = [1, 2, 3, 4, 5]
+lst_move(lst, 2, True)
+lst_move(lst, 2, False)
+print(lst)
