@@ -43,4 +43,4 @@ def is_into_triangle(triangle, point):
         return True
     else:
         return False
-print(is_into_triangle([[0, 2], [0, 7], [5, 7]], (2, 6)))
+print(is_into_triangle([[0, 0], [0, 2], [2, 4]], (-0.05, -0.05)))
