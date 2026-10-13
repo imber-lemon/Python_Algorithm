@@ -9,6 +9,15 @@ def transportin(matrix):
             print("")
     print("return")
     nice_print(matrix)
+def transportin_reverse(matrix):
+    for i in range(len(matrix)-1, len(matrix)//2, -1):
+        for j in range(len(matrix[0]) - 1, i, -1):
+            print(i, j)
+            #matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    print("return")
+    nice_print(matrix)
+
+
 # matrix = []
 # for i in range(5):
 #     lst = [0, 0, 0, 0, 0]
@@ -24,4 +33,4 @@ matrix2 = [[1, 2, 3],
            [7, 8, 9]]
 nice_print(matrix2)
 print(" ")
-transportin(matrix2)
+transportin_reverse(matrix2)
