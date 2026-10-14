@@ -1,0 +1,22 @@
+def diagonal_traverse(mat):
+    way = []
+    lst = []
+    for i in range(0, len(mat) + len(mat[0]) - 1):
+        for num1 in range(0, i+1):
+            num2 = i - num1
+            if num1 < len(mat) and num2 < len(mat[0]):
+                way.append(mat[num1][num2])
+        if i % 2 == 0:
+            way = way[::-1]
+        for x in way:
+            lst.append(x)
+        way = []
+    return lst
+# mat = [[1, 2, 3, 4],
+#        [5, 6, 7, 8],
+#        [9, 10, 11, 12],
+#        [13, 14, 15, 16]]
+mat = [[2, 3]]
+#1 2 5 9 6 3 4 7 10 13 14 11 8 12 15 16
+print(diagonal_traverse(mat))
+#00, 01, 10, 20, 11, 02, 12, 21, 22
