@@ -12,7 +12,7 @@ def spiral_print(matrix):
             rev_mat[i][j] = matrix[x][y]
             i += 1
             j += 1
-        i -= (cols - 1)
+        i -= (rows - 1)
         j -= (cols + 1)
         #print(rev_mat)
 
@@ -28,3 +28,4 @@ mat2 = [[1, 2, 3],
         [7, 8, 9]]
 
 print(spiral_print(mat2))
+
