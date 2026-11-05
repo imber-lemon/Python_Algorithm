@@ -18,6 +18,7 @@ def matr_mult(matrix1, matrix2):
             # print("")
             sum = 0
             col.clear()
+        print(lst)
         mult_matrix.append(lst)
         lst.clear()
         row.clear()
