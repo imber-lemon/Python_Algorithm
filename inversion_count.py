@@ -47,4 +47,4 @@ def inversion_count(lst):
 
     return final_num
 
-print(inversion_count([4, 2, 7, 8, 1, 3]))
+print(inversion_count([5, 4, 3, 2, 1]))
