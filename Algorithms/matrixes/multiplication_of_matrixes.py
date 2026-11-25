@@ -3,7 +3,6 @@ def matr_mult(matrix1, matrix2):
     sum = 0
     lst = []
     mult_matrix = []
-    #print(mult_matrix)
     for i in range(len(matrix1)):
         row = matrix1[i]
         for x in range(len(matrix2)):
@@ -24,4 +23,4 @@ def matr_mult(matrix1, matrix2):
         row.clear()
     return mult_matrix
 
-print(matr_mult([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+print(matr_mult([[1, 2], [3, 4]], [[1, 2], [3, 4], [5, 6]]))
