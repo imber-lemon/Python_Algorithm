@@ -23,4 +23,4 @@ def matr_mult(matrix1, matrix2):
         row.clear()
     return mult_matrix
 
-print(matr_mult([[1, 2], [3, 4]], [[1, 2], [3, 4], [5, 6]]))
+print(matr_mult([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6]]))
